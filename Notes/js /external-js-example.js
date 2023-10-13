@@ -20,3 +20,5 @@ console.log(confirmed);
 //Prompt - a pop up message to the user from JavaScript that asks for a text value
 let userString = prompt("what is your favorite food?");
 console.log(`Users favorite food: ${userString}`);
+
+//
