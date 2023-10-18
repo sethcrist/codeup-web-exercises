@@ -64,3 +64,35 @@ function localVarAlert(){
     alert(localVar);
     alert(globalVar)
 }
+
+//-----------------Conditionals-----------------
+
+//example
+//hour
+//if hour is between 6am and 12pm: good morning
+//if it is between 12pm and 6pm: good afternoon
+//otherwise: good evening
+
+let hour = 20;
+
+if (hour >= 6 && hour < 12)
+    console.log('good morning');
+else if (hour >= 12 && hour <18)
+    console.log('good afternoon');
+else
+    console.log('good evening');
+
+
+
+
+let pizzaPreference = prompt("What kind of pizza do you like?");
+
+if (pizzaPreference === "pineapple and hot sauce") {
+    alert("What a coincidence, that's my favorite!");
+} else if (pizzaPreference === "cheese") {
+    alert("Just plain cheese? Okay...");
+} else {
+    alert(`${pizzaPreference} isn't my favorite, but let's order some!`);
+}
+
+
