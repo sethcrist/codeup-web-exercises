@@ -106,6 +106,7 @@ for (let i = 1; i <= 10; i++) {
 }
 
 // 4. Create a for loop that uses console.log to create the output shown below.
+
 for (let i = 1; i <= 9; i++) {
     let numberString = i.toString()
     console.log(numberString.repeat(i));

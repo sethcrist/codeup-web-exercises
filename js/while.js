@@ -61,5 +61,6 @@ do {
         console.log("we do not have enough cones, sorry")
     }
 } while(allCones > 0);
+    console.log("im all out of cones to sell!")
 
 })();
