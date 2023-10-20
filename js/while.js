@@ -1,4 +1,6 @@
-"use strict"
+"use strict";
+(() => {
+
 
 // let i = 0;
 //
@@ -58,4 +60,6 @@ do {
     } else {
         console.log("we do not have enough cones, sorry")
     }
-} while(allCones > 0)
+} while(allCones > 0);
+
+})();

@@ -1,4 +1,6 @@
-"use strict"
+"use strict";
+(() => {
+
 
 //------------break and continue--------
 
@@ -44,3 +46,4 @@ for(let i = 1; i <= 50; i += 2) {
     }
     console.log(`here is an odd number: ${i}`)
 }
+})();

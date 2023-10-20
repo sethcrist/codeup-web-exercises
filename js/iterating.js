@@ -43,7 +43,7 @@ let names = ["seth", "john", "mark", "pat"];
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-    names.forEach(names => console.log(`Here is a lovely shape: ${names}.`));
+    names.forEach(names => console.log(`Here is a name: ${names}.`));
 
     /**
      * TODO:
@@ -58,5 +58,6 @@ let names = ["seth", "john", "mark", "pat"];
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+
 
 })();
