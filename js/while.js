@@ -53,7 +53,7 @@ let allCones = Math.floor(Math.random() * 50) + 50;
 do {
     let customerCones = Math.floor(Math.random() * 5) + 1;
     if(customerCones <= allCones) {
-        console.log("we have enough cones to sell!")
+        console.log(`customers buying ${customerCones} we have ${allCones} in stock, we have ${allCones - customerCones} left.`)
         allCones -= customerCones
     } else {
         console.log("we do not have enough cones, sorry")
