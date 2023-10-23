@@ -31,5 +31,9 @@
         planetList += '<li>' + planetsArray[i] + '</li>';
     }
     planetList += '</ul>'
+
+
+
+    //let planetList = `<ul><li>${planetsArray.join("</li><li>")}</li></ul>`
     console.log(planetList);
 })();
