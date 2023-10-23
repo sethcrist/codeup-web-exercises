@@ -74,7 +74,7 @@
 //     if (i % 2 !== 0) {
 //         //number isnt even
 //         //odd numbers arent as cool
-//         //skip the rest of the loop and continue with the net iteration
+//         //skip the rest of the loop and continue with the next iteration
 //         continue;
 //     }
 //     console.log('here is a lovely even number' + i);
