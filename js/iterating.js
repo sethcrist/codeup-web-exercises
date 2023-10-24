@@ -4,7 +4,6 @@
 
 
 // -------------NOTES-------------
-// do we use let or const for arrays?
 //elements are what is inside an array
 // Declaring an array.
 // let emptyArr = [];
@@ -55,13 +54,17 @@
      * 'names'.
      */
 let names = ["seth", "john", "mark", "pat"];
-    console.log(names)
+    console.log(names);
+
+
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
     console.log(names.length);
+
+
 
     /**
      * TODO:
@@ -73,6 +76,8 @@ let names = ["seth", "john", "mark", "pat"];
     console.log("the third name in the array is: " + names[2]);
     console.log("the fourth name in the array is: " + names[3]);
 
+
+
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
@@ -82,11 +87,13 @@ let names = ["seth", "john", "mark", "pat"];
         console.log('The name at index ' + i + ' is: ' + names[i]);
     }
 
+
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
     names.forEach(names => console.log(`Here is a name: ${names}.`));
+
 
     /**
      * TODO:
@@ -104,16 +111,16 @@ let names = ["seth", "john", "mark", "pat"];
 function first(value) {
     return value[0];
 }
+console.log(first(names));
 
-    console.log(first(names));
     function second(value) {
         return value[1];
 }
     console.log(second(names));
+
     function last(value) {
         return value[value.length -1];
 }
-
     console.log(last(names));
 
 })();

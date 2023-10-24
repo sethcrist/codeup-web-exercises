@@ -58,6 +58,7 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+
 let color = "green"
  switch(color) {
      case "blue":
@@ -182,6 +183,10 @@ function numberFacts() {
         }
     }
 }
+
+
+
+
 //------------conditionals notes------------
 //if (condition) {
 //      this code will run if our condition is true
@@ -197,190 +202,179 @@ function numberFacts() {
 //}
 
 /** To-Do: I want to make a block of code that logs a message to the console when a variable is set to the number 5. */
-//let possiblyFive = 5;
-//possiblyFive = "5";
+let possiblyFive = 5;
+possiblyFive = "5";
 
-//if (possiblyFive === 5) {
-    //console.log("that five");
-//}
+if (possiblyFive === 5) {
+    console.log("that five");
+}
 
 // we can also use our conditional logic in functions.
 
-/** TO-Do: I want to build a function that returns a string when I pass a number as an argument. */
 
-//function isItANumber(parameter){
-    //if (typeof parameter === "number") {
-        //return "that's a number";
-    //}
-//}
+
+/** TO-Do: I want to build a function that returns a string when I pass a number as an argument. */
+function isItANumber(parameter){
+    if (typeof parameter === "number") {
+        return "that's a number";
+    }
+}
 
 // IF/ELSE statements: code that runs when a condition is met. but will also run with a default state.
 
-//if (condition) {
+// if (condition) {
 //    i run the condition evaluates to true;
-//} else {
+// } else {
 //    otherwise i run;
-//}
+// }
 
 /** consider: if i owned one i'd get milk from my cow when i ran out, but since i dont ill go to the store */
 
-//let hasCow = false;
-    //if (hasCow) {
-        //console.log("going to go milk Bessie. BRB");
-    //} else {
-       // console.log("headed to the store to go get milk");
-    //}
+let hasCow = false;
+    if (hasCow) {
+        console.log("going to go milk Bessie. BRB");
+    } else {
+       console.log("headed to the store to go get milk");
+    }
+
 
 /** TO_DO lets expand our previous isItANumber function. Now i want to also return string when we arent passed a number */
 
-//function isItANumber(parameter){
-    //if (typeof parameter === "number") {
-        //return "that's a number";
-    //} else {
-        //return "that's not a number...";
-    //}
-//}
+function isItANumber(parameter){
+    if (typeof parameter === "number") {
+        return "that's a number";
+    } else {
+        return "that's not a number...";
+    }
+}
 
 //IF/ELSE IF/ELSE = A chain of if/else statements to give different results for different conditions.
 
 // if (condition1) {
 //      run this code;
 // } else if (condition2) {
-//      since the first condition wasnt met, and the second was i run;
+//      since the first condition wasn't met, and the second was i run;
 // } else {
-//      since neither the first or second condition was met i run default
+//      since neither the first or second condition was met I run default
 // }
 
 /** consider: "if i owned a cow, id get milk from it when i ran out. if i owned a goat, i could get milk from it, but since i dont
  * own either of those ill go to the store instead." */
 
-// how would i write this as a if/else if/else code block? (will take the first true statement first)
+//how would i write this as a if/else if/else code block? (will take the first true statement first)
 
-//let hasCowAgain = false;
-//let hasGoat = true;
+let hasCowAgain = false;
+let hasGoat = true;
 
- //if (hasCowAgain) {
-     //console.log("Going to go milk the cow");
- //} else if (hasGoat) {
-     //console.log("going to milk the goat");
- //} else {
-     //console.log("going to store for some milk");
- //}
+ if (hasCowAgain) {
+     console.log("Going to go milk the cow");
+ } else if (hasGoat) {
+     console.log("going to milk the goat");
+ } else {
+     console.log("going to store for some milk");
+ }
+
+
 
 /** TO-DO: Lets make a function that takes in a number and will return three different strings for an argument
  * lesser than, greater than, or equal to 35. */
 
-//function isThisThirtyFive(parameter) {
-    //if (parameter  === 35) {
-        //return "yup, that is 35 alright!";
-    //} else if (parameter > 35) {
-        //return `Nope, ${parameter} that is more than 35..`;
-    //} else {
-        //return `Nope, ${parameter} is less than 35.....`;
-    //}
-//}
-// console.log(isThisThirtyFive(34));
-// console.log(isThisThirtyFive(35));
-// console.log(isThisThirtyFive(36));
+function isThisThirtyFive(parameter) {
+    if (parameter  === 35) {
+        return "yup, that is 35 alright!";
+    } else if (parameter > 35) {
+        return `Nope, ${parameter} that is more than 35..`;
+    } else {
+        return `Nope, ${parameter} is less than 35.....`;
+    }
+}
+console.log(isThisThirtyFive(34));
+console.log(isThisThirtyFive(35));
+console.log(isThisThirtyFive(36));
+
+
 
 
 //TERNARY Expression: An expression to set a value based on boolean evaluation
 
-// let message = (booleanValue) ? "Operation was true." : "Operation was false.": (if you see '?' itll be TERNARY)
+// let message = (booleanValue) ? "Operation was true." : "Operation was false.": (if you see '?' it'll be TERNARY)
 //          TRUE will be on left, FALSE will be on right
 /** Consider: "Are we out of milk? If we are: ill head to the store, but if we do have milk: i want to make a bowl of cereal." */
 
-// How would we write this as a ternary expression?
+//How would we write this as a ternary expression?
 
-// let doWeHaveMilk = true
+let doWeHaveMilk = true
 
-// let action = (doWeHaveMilk) ? "I'm gonna make me a bowl of cereal!" : "going to the store to get milk";
-// console.log(action);
+let action = (doWeHaveMilk) ? "I'm gonna make me a bowl of cereal!" : "going to the store to get milk";
+console.log(action);
+
+
 
 /** TO-DO: look back at the if/else version of our isItANumber function. Lets refactor our if/else using a ternary expression. */
 
-// function isItANumber(parameter){
-//     return (typeof parameter === "number") ? "that's a number" : "that's not a number...";
-// }
+function isItANumber(parameter){
+    return (typeof parameter === "number") ? "that's a number" : "that's not a number...";
+}
+
+
 
 // SWITCH STATEMENT: A statement with multiple cases that will trigger based on the value of a variable.
 
-// let color = prompt("What is your favorite color?").toLowerCase();
-//
-// switch(color) {
-//     case "green":
-//         alert("What a coincidence, thats my favorite");
-//         break;
-//     case "orange":
-//         alert("thats my brothers favorite color");
-//         break;
-//     default:
-//         alert(color + " is a weird color, my dude.");
-//         break;
-// }
+let color = prompt("What is your favorite color?").toLowerCase();
+
+switch(color) {
+    case "green":
+        alert("What a coincidence, thats my favorite");
+        break;
+    case "orange":
+        alert("thats my brothers favorite color");
+        break;
+    default:
+        alert(color + " is a weird color, my dude.");
+        break;
+}
 
 /** Consider: "i dont have a cow, goat, or camel. I guess ill have to go to the store for milk" */
 
 // How would we write this as a switch statement?
 
-// let animal = "blue tongue skink";
-// switch (animal) {
-//     case "cow":
-//         console.log("milking the cow");
-//         break;
-//     case "goat":
-//         console.log("milking the goat");
-//         break;
-//     case "camel":
-//         console.log("milking the camel");
-//         break;
-//     default:
-//         console.log("headed to the store fore milk");
-//         break;
-// }
+let animal = "blue tongue skunk";
+switch (animal) {
+    case "cow":
+        console.log("milking the cow");
+        break;
+    case "goat":
+        console.log("milking the goat");
+        break;
+    case "camel":
+        console.log("milking the camel");
+        break;
+    default:
+        console.log("headed to the store fore milk");
+        break;
+}
+
+
 
 /**TO-DO: Lets make a switch statement with a prompt for the user to input their favorite sandwich meat. If they like 'olive loaf' we should return on
  * alert to congratulate them on their bold choice, and if  they choose 'brisket' we should return a different alert: this one for congratulating them on the
  * 'right' answer. All other responses should trigger an alert stating apathy */
 
-// let meatOfChoice = prompt("Whats your favorite lunch meat?").toLowerCase();
-//
-// switch(meatOfChoice) {
-//     case "olive loaf":
-//     case "oliveloaf":
-//         alert("wow! Thats a bold choice");
-//         break;
-//     case "brisket":
-//         alert("that is correct.");
-//         break;
-//     default:
-//         alert("meh, its not terrible. just not my favorite.");
-//         break;
-// }
+let meatOfChoice = prompt("Whats your favorite lunch meat?").toLowerCase();
 
-//------------------------exam Test--------------------
-"use strict";
+switch(meatOfChoice) {
+    case "olive loaf":
+    case "oliveloaf":
+        alert("wow! Thats a bold choice");
+        break;
+    case "brisket":
+        alert("that is correct.");
+        break;
+    default:
+        alert("meh, its not terrible. just not my favorite.");
+        break;
+}
 
-/**
- * Write your solutions here.
- *
- * **Note**: While normally it is good practice to wrap your javascript in an
- * immediately invoked function expression (iife), you should _not_ do that
- * here. If you do, the automated tests will not be able to see your functions.
- * If you don't know what an iffe is, don't worry about it :)
- *
- * This file is for defining the following functions. See README.md for more detail.
- * isTrue
- * isFalse
- * not
- * addOne
- * isEven
- * isIdentical
- * isEqual
- * or
- * and
- * concat
- */
 
 
 
