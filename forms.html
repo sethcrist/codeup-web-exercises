@@ -8,30 +8,34 @@
     <section>
             <h1>Register With Us</h1>
         <form action="https://request-inspector.glitch.me/" method="get">
-            <label for="Email">Enter Your Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter Your Email">
-
+            <label for="email">Enter Your Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter Your Email"> <!-- no id = cant click on the text, no name = doesn't get posted to the browser -->
+            <br>
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Enter Password">
             <br>
             <br>
             <label for="biography">Bio</label>
+            <br>
             <textarea name="biography" id="biography" cols="40" rows="10" placeholder="Take your time and tell me about yourself!"></textarea>
             <br>
-            <h2>How did you hear about us?</h2>
-            <input type="radio" name="How did you hear about us" value="a">billboard<br>
-            <input type="radio" name="How did you hear about us" value="b">radio advertisement<br>
-            <input type="radio" name="How did you hear about us" value="c">internet advertisement<br>
-            <input type="radio" name="How did you hear about us" value="d">other<br>
+            <section>
+                <h2>How did you hear about us?</h2>
+                <input type="radio" id="billboard" name="How did you hear about us" value="billboard"> <label for="billboard">billboard</label><br>
+                <input type="radio" id="radio advertisement" name="How did you hear about us" value="advertisement"><label for="billboard">radio advertisement</label><br>
+                <input type="radio" id="internet advertisement" name="How did you hear about us" value="internet advertisement"><label for="internet advertisement">internet advertisement</label><br>
+                <input type="radio" id="other" name="How did you hear about us" value="other"><label for="other">other</label><br>
+            </section>
+            <section>
+                <label for="browser choice">What browser are you using</label>
+                <select name="browser choice" id="browser choice">
+                    <option value="Google">Google</option>
+                    <option value="Firefox">Firefox</option>
+                    <option value="Safari">Safari</option>
+                </select>
+            </section>
             <br>
-            <label for="browser choice">What browser are you using</label>
-            <select name="browser choice" id="browser choice">
-                <option value="Google">Google</option>
-                <option value="Firefox">Firefox</option>
-                <option value="Safari">Safari</option>
-            </select>
-            <br>
-            <input type="submit">
+            <button>Submit form</button>
         </form>
     </section>
 </body>
