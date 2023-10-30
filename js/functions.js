@@ -205,6 +205,102 @@ function and(input1, input2) {
 }
 // 10. Define a function named `concat` that takes in two input arguments. If both arguments are strings, then return the concatenated result.
 // If two numbers are provided, then return the string concatenation of each set of numerals.
-function concat() {
+const concat = (input1, input2) => "" + input1 + input2;
 
+// could also use
+//function concat (val1, val2) {
+//    return "" + val1 + val2;
+//}
+
+// 11. write a function named 'checkForNumber' that accepts an argument and returns a string 'number' or 'not a number' based on whether the input is a number.
+function checkForNumber(input) {
+    if (typeof input === "number") {
+        return "number"
+    } else {
+        return "not a number";
+    }
+}
+
+// 12. write a function named 'evenOrOdd' that returns a string "even" or "odd" when passed a numeric argument. the result should represent whether the number is even or odd.
+function evenOrOdd(input){
+    if (input % 2 === 0) {
+        return "even";
+    } else {
+        return "odd";
+    }
+}
+
+// 13. write a function named 'doubleTheElements' that accepts an array of numbers and returns an array with double the value of each number.
+function doubleTheElements(input){
+    const bucket = [];
+    for (let num of input) {
+        bucket.push(num *2);
+    }
+    return bucket;
+}
+// 14. write a function named 'sumOfElements' that accepts an array of numbers and returns the sum of those numbers.
+function sumOfElements(input) {
+    let bucket = 0;
+    for (let num of input) {
+        bucket += num;
+    }
+    return bucket;
+}
+
+// 15. write a function named 'totalPrice' that accepts an array of objects where each object represents a product from a store,
+// that has a price property. the function should return the total of every object's price property.
+function totalPrice(arr) {
+    let bucket = 0;
+    for (let item of arr) {
+        bucket += item.price;
+    }
+    return bucket;
+}
+
+// 16. write a function named 'findHighestPrice' that accepts an array of objects where each object represents a product from a store, that has a price property.
+// the function should return the highest price value from the array. 'findHighestPrice'.
+function findHighestPrice(arr) {
+    let highestPrice = 0;
+    for (let {price} of arr) {
+        if (price > highestPrice) {
+            highestPrice = price;
+        }
+    }
+    return highestPrice;
+}
+
+// 17. write a function named 'discountCheck'. the function should accept an object that  represents a customer's transaction. the object passed into the function should have
+// 'customerName', 'items', and 'clubMember' properties. a customer will qualify for a discount if they have a total from the 'items' property of 150 or greater, or if they are a club
+// member. 'discountCheck' should return a boolean representing whether the customer described by the object qualifies for a discount.
+// HINT: the 'totalPrice function may be used to calculate the total price of the items by passing in the array of items.
+function discountCheck(customer) {
+    return totalPrice(customer.items) >= 150 || customer.clubMember;
+}
+// 18. write a function named 'newProduct' with two parameters, a string that contains a name, and a number representing the products price and returns an object with properties
+// 'name' and 'price'.
+function newProduct(name, price) {
+    return {name, price};
+}
+// 19. write a function named 'countWords' that accepts a string and returns the number of words in that string.
+function countWords(str) {
+    if (str === "") {
+        return 0;
+    } else {
+        return str.split(" ").length;
+    }
+}
+// 20. write a function named 'describeNumber' that takes in an integer and will return an object describing different features of the input as a number. if the input is a number,
+// the object should have three properties: 'value' for the value passed, evenOrOdd which should be a string to identify whether the passed argument is evenly divisible by 2,
+// and 'numberOfDigits' which should count the number of digits in the argument passed into the function
+function describeNumbers(num) {
+    return {
+        value: parseInt(num),
+        evenOrOdd: evenOrOdd(num),
+        numberOfDigits: num.toString().length
+    }
+}
+// 21. write a function named 'screamingSnakeCase' that accepts a string that has several words each seperated by a space, and returns a string with each word in all caps,
+// and with the spaces replaced by underscores. (ex. SCREAMING_SNAKE_CASE).
+function screamingSnakeCase(str) {
+    return str.toUpperCase().split(" ").join("_");
 }

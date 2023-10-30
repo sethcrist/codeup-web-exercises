@@ -1,5 +1,5 @@
 /* how to comment */
-/*.fancy-header {*/
-/*    color: ;*/
-
-/*}*/
+.fancy-header {
+    color:purple;
+    text-decoration: underline;
+}
