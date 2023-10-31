@@ -1,6 +1,6 @@
 /* how to comment */
 .fancy-header {
-    color:darkcyan;
+    color:ghostwhite;
     text-decoration: underline;
     text-align: center;
     font-family: cursive;
@@ -8,16 +8,16 @@
 }
 body {
     background-image: url("../img/img/spacebackground.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 .intro-header {
-    color:darkred;
+    color:mediumvioletred;
     text-align: center;
     font-family: sans-serif;
 }
 
-/*html {*/
-/*    background-image:url();*/
-/*}*/
 
 h3 {
     color: purple;
