@@ -5,3 +5,32 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
+
+div {
+    padding: 15px; /* sets the required padding space on all sides of an element */
+    border: 2px lightgrey; /* Border is the area between the edge of the padding and the margin*/
+    border-radius: 5px; /* rounds the edges */
+    margin: 10px; /* changes the distance between to elements */
+    width: 95%; /* changes the width of the element*/
+
+}
+
+.message-info {
+    background-color: rgb(197, 218, 253);
+    color: rgb(107, 108, 179)
+}
+
+.message-success {
+    background-color: rgb(196, 241, 214);
+    color: rgb(41, 135, 92)
+}
+
+.message-warning {
+    background-color: rgb(251, 250, 198);
+    color: rgb(159, 142, 70)
+}
+
+.message-error {
+    background-color: rgb(253, 205, 210);
+    color: rgb(172, 88, 105);
+}
