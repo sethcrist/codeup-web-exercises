@@ -7,7 +7,7 @@
     font-size: 50px;
 }
 body {
-    background-color: darkgray;
+    background-image: url("../img/img/spacebackground.jpeg");
 }
 .intro-header {
     color:darkred;
@@ -25,8 +25,12 @@ h3 {
     text-decoration: underline;
 }
 
-ul, ol, li {
-    text-align: center;
+ul {
+    font-family: cursive;
+    list-style: square;
+}
+
+ol {
     font-family: cursive;
     list-style: upper-roman;
 }
