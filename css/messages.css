@@ -8,7 +8,7 @@ body, html {
 
 div {
     padding: 15px; /* sets the required padding space on all sides of an element */
-    border: 2px lightgrey; /* Border is the area between the edge of the padding and the margin*/
+    border: 2px solid rgb(0, 0, 0, .35); /* Border is the area between the edge of the padding and the margin*/
     border-radius: 5px; /* rounds the edges */
     margin: 10px; /* changes the distance between to elements */
     width: 95%; /* changes the width of the element*/
