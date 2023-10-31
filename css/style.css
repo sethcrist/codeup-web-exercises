@@ -1,13 +1,13 @@
 /* how to comment */
 .fancy-header {
-    color:ghostwhite;
+    color: #00fff5;
     text-decoration: underline;
     text-align: center;
     font-family: cursive;
     font-size: 50px;
 }
 body {
-    background-image: url("../img/img/spacebackground.jpeg");
+    background-image: url("../img/img/spiral.jpeg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -20,36 +20,74 @@ body {
 
 
 h3 {
-    color: purple;
+    color: #00fff5;
     font-family: "cursive";
     text-decoration: underline;
 }
 
 ul {
+    color: rgb(199, 21, 133);
     font-family: cursive;
     list-style: square;
 }
 
 ol {
+    color: mediumvioletred;
     font-family: cursive;
     list-style: upper-roman;
 }
 
-table {
+.imgOne {
+    width: 500px;
+    height: 300px;
+    border: 2px solid mediumvioletred;
+    margin: 1em;
+}
+
+.imgTwo {
+    width: 500px;
+    height: 300px;
+    border: 2px solid #00fff5;
+    margin: 1em;
+}
+
+.imgThree {
+    width: 500px;
+    height: 300px;
+    border: 2px solid #00fff5;
+    margin: 1em;
+}
+
+.imgFour {
+    width: 500px;
+    height: 300px;
+    border: 2px solid mediumvioletred;
+    margin: 1em;
+}
+.ourProduct {
+    color: darkred;
+    font-family: "cursive";
+    text-decoration: underline;
+    margin: auto;
+}
+
+table, tr, th,td {
     font-family: cursive;
     text-decoration: underline;
+    color: darkred;
+    border: 2px solid darkred;
 }
 
 .guarantee {
     font-weight: bold;
+    color: orangered;
 }
 
-
-
-
-
-
-
+a {
+    transition: .5s;
+    text-decoration: underline;
+    color: orangered;
+}
 
 a:hover {
     color: orangered;
