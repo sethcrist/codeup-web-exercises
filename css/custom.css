@@ -47,3 +47,8 @@ html {
 .quantity-sauce {
     width: 100%;
 }
+
+.btn-group-size {
+    display: block;
+    right: auto;
+}
