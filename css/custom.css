@@ -23,6 +23,12 @@ html {
     padding: 50px 20px 5px 20px;
 }
 
+.main-body {
+    display: block;
+    margin-right: 270px;
+    margin-left: 300px;
+}
+
 .size-badge {
     border-radius: 100%;
     padding: 7px;
@@ -30,3 +36,14 @@ html {
     color: white;
 }
 
+.quantity-cheese {
+    width: 100%;
+}
+
+.sauce-type {
+    width: 100%;
+}
+
+.quantity-sauce {
+    width: 100%;
+}
