@@ -1,0 +1,19 @@
+html {
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.pizza {
+    height: 346px;
+    background-size: cover;
+    z-index: 2;
+}
+
+.jumbotron-intro {
+    z-index: 3;
+    position: absolute;
+    top: 5em;
+    right: 285px;
+    background-color: rgba(255, 255, 255, 0.52);
+    padding: 5px 450px;
+}
