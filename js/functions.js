@@ -304,3 +304,127 @@ function describeNumbers(num) {
 function screamingSnakeCase(str) {
     return str.toUpperCase().split(" ").join("_");
 }
+
+
+// 1. Write a function named isNegative that accepts a number and returns true or false based on whether the input is negative.
+function isNegative(input){
+    if (input < 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// 2. Write a function named isTen that accepts a number and returns a boolean that indicates whether or not that number is equal to 10.
+function isTen(number) {
+    if (typeof number === 'number' && !isNaN(number)) {
+        return number === 10;
+    }
+    return false;
+}
+
+// 3. Write a function named double that accepts a number and returns the number doubled.
+function double(input) {
+    return input * 2;
+}
+
+// 4. Write a function named remove9s that accepts an array of numbers and returns an array with all the same numbers except for 9.
+function remove9s(input) {
+    return input.filter(function (num) {
+        return num !== 9;
+    });
+}
+
+// 5. Write a function named average that accepts an array of numbers and returns the average of those numbers.
+
+function average(array) {
+    var sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    return sum / array.length;
+}
+
+// 6. Write a function named countOdds that accepts an array of numbers and returns the number of odd numbers in the array.
+function countOdds(array) {
+    let count = 0;
+    for (let number of array) {
+        if (number % 2 !== 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// 7. Write a function named averageSales that accepts an array of objects where each object represents a person, and has a sales property.
+// The function should return the average of every object's sales property.
+function averageSales(people) {
+    let totalSales = 0;
+    let count = 0;
+    for (let person of people) {
+        totalSales += person.sales;
+        count++;
+    }
+    return totalSales / count;
+}
+
+// 8. Write a function named convertNameToObject that accepts a string that contains a first name and last name separated by a space character,
+// and returns an object with properties firstName and lastName.
+function convertNameToObject(fullName) {
+    let parts = fullName.split(' ');
+    let firstName = parts[0];
+    let lastName = parts[1];
+    return {
+        firstName,
+        lastName,
+    }
+}
+
+// 9. Write a function named countVowels that accepts a string and returns the number of vowels in that string. (Don't worry about or count "y" as a vowel)
+function countVowels(str) {
+    let vowels = "aeiou";
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.indexOf(str[i]) != -1) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// 10. Write a function named analyzeWord. It should take in a string and return an object with information about the input word.
+// The object returned should have the following properties:
+// word: the original word that was passed into the function
+// numberOfLetters: the number of letters in the word
+// numberOfVowels: the number of vowels in the word
+
+// analyzeWord('codeup')
+// { word: 'codeup', numberOfLetters: 6, numberOfVowels: 3 }
+function analyzeWord(str) {
+    let obj = {
+        word: str,
+        numberOfLetters: 0,
+        numberOfVowels: 0
+    }
+
+    for (let i = 0; i < str.length; i++) {
+        obj.numberOfLetters++;
+    }
+
+    obj.numberOfVowels = countVowels(str);
+
+    return obj;
+}
+
+//11. Write a function named capitalizeName that accepts a string that is a first and last name separated by a space,
+// and returns a string that that has the first and last names capitalized.
+// capitalizeName('ron weasley') // "Ron Weasley"
+// capitalizeName('Harry Potter') // "Harry Potter"
+// capitalizeName('Nathan drake') // "Nathan Drake"
+function capitalizeName(str) {
+    let fullName = str.split(" ");
+    for (let i = 0; i < fullName.length; i++) {
+        fullName[i] = fullName[i] [0].toUpperCase() + fullName[i].substring(1);
+    }
+    return fullName.join(" ");
+}

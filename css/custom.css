@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
     z-index: 1;
+    height: 200vh;
 }
 
 .pizza {
