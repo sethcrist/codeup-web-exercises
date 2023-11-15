@@ -28,6 +28,7 @@
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
             const mainHeader = document.getElementById("main-header");
+                //const mainHeader = document.querySelector("#main-header");  id = #
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
             mainHeader.innerHTML = "JavaScript is Cool!"
@@ -45,7 +46,7 @@
 
         // TODO: Set text color on every other list item to grey
             for (let i = 0; i < listItems.length; i++) {
-                if (i % 2 === 0) {
+                if (i % 2 !== 0) {
                     listItems[i].style.color = "grey";
                 }
             }
@@ -56,7 +57,7 @@
             const subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-            subParagraphs[0].innerHTML = "Mission Accomplished!";
+            subParagraphs[0].innerText = "Mission Accomplished!";
 
 </script>
 </body>
