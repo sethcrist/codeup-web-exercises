@@ -10,32 +10,6 @@
     <h2 id="profile-name">Charmander</h2>
     <p id="profile-desc">This is a sample description text for a profile card. JavaScript will be used to manipulate this card.</p>
 </div>
-    <script>
-        const image = document.getElementById("profile-pic");
-        setTimeout(() => {
-            image.src="img/img/charzard.png";
-        }, 2000);
-
-        const profileName = document.getElementById("profile-name");
-        setTimeout(() => {
-            profileName.innerHTML = "Charzard";
-        }, 4000);
-
-        const profileDescription = document.getElementById("profile-desc");
-        setTimeout(() => {
-            profileDescription.classList.add("color");
-            profileDescription.style.color = "red";
-            profileDescription.style.fontFamily = "cursive";
-        }, 6000);
-
-        const profileCard = document.getElementById("profile-card");
-        setInterval(() => {
-            profileCard.classList.toggle("background-color");
-            profileCard.style.background = "yellow";
-            profileCard.style.background = "orange";
-        }, 2000);
-
-    </script>
 <button id="toggle-btn">Toggle Background</button>
 <script src="js/attributes-script.js"></script>
 </body>
