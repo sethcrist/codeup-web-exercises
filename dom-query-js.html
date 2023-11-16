@@ -25,41 +25,117 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 <script>
-        "use strict";
-        // TODO: Uncomment next line and get the main header element by id
-            const mainHeader = document.getElementById("main-header");
-                //const mainHeader = document.querySelector("#main-header");  id = #
+    "use strict";
+    // TODO: Uncomment next line and get the main header element by id
+    //     const mainHeader = document.getElementById("main-header");
+    //const mainHeader = document.querySelector("#main-header");  id = #
 
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-            mainHeader.innerHTML = "JavaScript is Cool!"
+    // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+    //     mainHeader.innerHTML = "JavaScript is Cool!"
 
-        // TODO: Uncomment the next line and get the sub header element by id
-            const subHeader = document.getElementById("sub-header");
+    // TODO: Uncomment the next line and get the sub header element by id
+    //     const subHeader = document.getElementById("sub-header");
 
-        // TODO: Set the text color of subHeader to blue
-        //  could also use: document.getElementById('sub-header').style.color = "blue"
-            subHeader.style.color = "blue";
+    // TODO: Set the text color of subHeader to blue
+    //  could also use: document.getElementById('sub-header').style.color = "blue"
+    //     subHeader.style.color = "blue";
 
-        // TODO: Uncomment the next line and get all list items
-        const listItems = document.getElementsByTagName("li");
-        console.log(listItems);
+    // TODO: Uncomment the next line and get all list items
+    // const listItems = document.getElementsByTagName("li");
+    // console.log(listItems);
 
-        // TODO: Set text color on every other list item to grey
-            for (let i = 0; i < listItems.length; i++) {
-                if (i % 2 !== 0) {
-                    listItems[i].style.color = "grey";
-                }
-            }
-        // TODO: Set text color of li with dbid = 1 to blue
-            listItems[0].style.color = "blue";
+    // TODO: Set text color on every other list item to grey
+    //     for (let i = 0; i < listItems.length; i++) {
+    //         if (i % 2 !== 0) {
+    //             listItems[i].style.color = "grey";
+    //         }
+    //     }
+    // TODO: Set text color of li with dbid = 1 to blue
+    //     listItems[0].style.color = "blue";
 
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-            const subParagraphs = document.getElementsByClassName("sub-paragraph");
+    // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+    //     const subParagraphs = document.getElementsByClassName("sub-paragraph");
 
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-            subParagraphs[0].innerText = "Mission Accomplished!";
+    // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+    //     subParagraphs[0].innerText = "Mission Accomplished!";
 
 </script>
-    button
+<button id="jsIsCool">Change the Header!</button>
+<button id="subHeadBlue">Change the sub-header!</button>
+<button id="missionAcc">Change sub-paragraph!</button>
+<button id="liDbidBlue">Change the color of the list!</button>
+
+<!--script for the buttons-->
+
+<script>
+    <!-- changing the main header from hello world to javascript is cool   -->
+    function changeMainHeader() {
+        document.getElementById("main-header").innerHTML = "JavaScript is Cool!";
+    }
+
+    document.getElementById("jsIsCool").addEventListener("click", function () {
+        changeMainHeader();
+    })
+
+    // changing the sub header to the color blue
+    function changeSubHeader() {
+        document.getElementById("sub-header").style.color = "blue";
+    }
+
+    document.getElementById("subHeadBlue").addEventListener("click", function () {
+        changeSubHeader()
+    })
+
+    // changing the paragraph to mission accomplished
+    function changeParagraph() {
+        document.querySelector("p").innerText = "Mission Accomplished!";
+    }
+
+    document.getElementById("missionAcc").addEventListener("click", function () {
+        changeParagraph()
+    })
+
+    // changing the first li to blue and every other to grey
+    function changeList() {
+        let list = document.getElementsByTagName("li")
+        for (let i = 0; i < list.length; i++) {
+            if (i % 2 !== 0) {
+                list[i].style.color = "grey";
+            }
+            if (list[i].dataset.dbid === "1") {
+                list[i].style.color = "green";
+            }
+        }
+    }
+
+    document.getElementById("liDbidBlue").addEventListener("click", function () {
+        changeList()
+    });
+
+    // ----------------------Mouse events exercise-------------------------
+
+    // 1. Add code that will change the background color of an h1 element when clicked.
+    let changeColorH1 = document.getElementById("main-header");
+    changeColorH1.addEventListener("click", function () {
+        changeColorH1.style.backgroundColor = "blue";
+    })
+
+    // 2. Make all paragraphs have a font size of 18px when they are double clicked.
+    let dBLFontSize = document.querySelector("p");
+    dBLFontSize.addEventListener("dblclick", function () {
+        dBLFontSize.style.fontSize = "18px";
+    })
+
+    // 3. Set all li text color to red when the mouse is hovering; reset to black when it is not.
+    let mouseHover = document.querySelector("ul");
+    mouseHover.addEventListener("mouseenter", function () {
+        mouseHover.style.color = "red";
+    })
+    let mouseExit = document.querySelector("ul");
+    mouseExit.addEventListener("mouseleave", function () {
+        mouseExit.style.color = "black";
+    })
+
+</script>
 </body>
 </html>
