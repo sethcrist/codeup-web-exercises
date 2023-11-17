@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #886cbd;
+            transition: background-color 3.5s ease;
+        }
+
+        .red-heart {
+            width: 20em;
+            height: 20em;
+            margin: auto;
+            border: 5px solid red;
+            border-radius: 25px;
+            box-shadow: 5px 5px 5px 5px hotpink;
+        }
+
+        .image-text {
+            font-family: cursive;
+            color: darkred;
+            font-size: 40px;
+            margin-top: 10px;
+        }
+
+        #konamiHeader {
+            color: goldenrod;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<!-----------audio code-------------->
+<audio id="intenseIntro" src="audio/intense.wav" loop></audio>
+<h1 id="konamiHeader">~Konami Code~</h1>
+
+<!--------------hidden picture and message----------------->
+<img id="redLinkHeart" class="red-heart" src="img/img/linkHeart.png" hidden="hidden">
+<p class="image-text" hidden="hidden">Congratulations...</p>
+
+<script>
+    "use strict";
+
+    // ----------------------konami code: up, up, down, down, left, righ, left, righ, b, a, enter---------------
+
+    let konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    console.log(konamiCode)
+    let konamiIndex = 0; // current starting position
+    let BGColors = ["#1f035a", "#36047e", "#5902a6", "#8f08bf", "#a80fbf", "#d420bd", "#e42fbd"]; // changes the background color
+    let colorIndex = 0; // sets the color to start at 0 (first color)
+    let originalKonamiHeader = document.getElementById("konamiHeader").innerHTML // return the text to the original
+    let originalImgSrc = document.getElementById("redLinkHeart").src
+    document.addEventListener("keyup", function (event) {
+        console.log("key pressed:", event.key);
+        if (event.key === konamiCode[konamiIndex]) { // check if the correct keys are being pressed
+            konamiIndex++; // moves to the next sequence
+            if (konamiIndex === konamiCode.length) { // checks if the input was correct
+                // playIntroMusic (); // plays the music upon completion
+                linkHeartComplt (); // lets the player know they entered the correct code
+                displayText ();
+                changeColorBackground ();
+                konamiIndex = 0; // restarts the code for next time
+            }
+        } else {
+            konamiIndex = 0 // if entered wrong code will reset
+        }
+    });
+
+    // to play the intro music
+    function playIntroMusic() {
+        let audio = document.getElementById("intenseIntro");
+        audio.play();
+    }
+
+    function linkHeartComplt () {
+        let linkHeart = document.getElementById("redLinkHeart");
+        linkHeart.classList.add("red-heart");
+        linkHeart.hidden = false;
+    }
+
+    function displayText () {
+        let imgText = document.querySelector(".image-text");
+        imgText.innerHTML = "Congratulations Ya Cheat! Here's 30 Extra ❤️!";
+        imgText.hidden = false;
+    }
+
+    function changeColorBackground () {
+        colorIndex = (colorIndex + 1) % BGColors.length;
+        document.body.style.backgroundColor = BGColors[colorIndex];
+    }
+
+    let konamiHeader = document.getElementById("konamiHeader");
+    konamiHeader.addEventListener("dblclick", function () {
+        konamiHeader.innerHTML = "Try the secret code 👀";
+        setTimeout(function () {
+            konamiHeader.innerHTML = originalKonamiHeader;
+        }, 2000);
+    });
+
+    let redLinkHeart = document.getElementById("redLinkHeart");
+    redLinkHeart.addEventListener("dblclick", function () {
+        let imgText = document.querySelector(".image-text");
+        imgText.textContent = "Okay stop clicking ya animal, that's it!";
+        setTimeout(function () {
+            imgText.textContent = "Congratulations Ya Cheat! Here's 30 Extra ❤️!"
+        }, 3000);
+    });
+
+
+
+
+</script>
+</body>
+</html>
