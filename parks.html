@@ -3,43 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <title>Parks</title>
-
+    <style>
+        button {
+            padding: 8px;
+            border-radius: 50px;
+            color: yellow;
+            background: black;
+        }
+    </style>
 </head>
 <body>
 
 <h1>National Parks FAQ</h1>
 
-<dl>
-    <dt>How many people visit the national parks?</dt>
-    <dd>Total recreation visitors to the national parks in 2018: 318,211,833.</dd>
+<div id="yellowstone-parks-div">
+    <h3 id="yellowstone-parks-heading">Yellowstone National Park</h3>
+    <ul id="yellowstone-national-parks">
+        <li>How many people visit the national parks?</li>
+                <li>Total recreation visitors to the national parks in 2018: 318,211,833.</li>
+        <li>How old is the National Park System?</li>
+                <li>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</li>
+        <li>How many employees are in the National Park Service?</li>
+                <li>Permanent, temporary, and seasonal employees: More than 20,000</li>
+        <li>What is the origin of the National Park Service arrowhead?</li>
+                <li>The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951.</li>
+    </ul>
+</div>
 
-    <dt>How old is the National Park System?</dt>
-    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd>
+<!-------------------for denali--------------------->
+<div id="denali-parks-div">
+    <h3 id="denali-parks-heading">Denali</h3>
+    <ul id="denali-national-parks">
+        <li>How many areas are in the National Park System?</li>
+                <li>The system includes 419 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands.</li>
+        <li>What is the largest national park site?</li>
+                <li>Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres.</li>
+        <li>What is the National Park Service budget?</li>
+                <li>Fiscal Year (FY) 2014 Enacted: $2.98 billion.</li>
+    </ul>
+</div>
 
-    <dt>How many employees are in the National Park Service?</dt>
-    <dd>Permanent, temporary, and seasonal employees: More than 20,000</dd>
+<!--------------------for carlsbad caverns--------------->
+<div id="carlsbad-parks-div">
+    <h3 id="carlsbad-parks-heading">Carlsbad Caverns</h3>
+    <ul id="carlsbad-national-parks">
+        <li>Can I bring my pet to a national park?</li>
+                <li>Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities.</li>
+        <li>How do I apply for a job with the National Park Service?</li>
+                <li>National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs.</li>
+        <li>What do I need to know about driving off road in national parks?</li>
+            <li>Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</li>
+    </ul>
+</div>
 
-    <dt>What is the origin of the National Park Service arrowhead?</dt>
-    <dd>The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951.</dd>
+<button id="highlightLastLi">Highlight the last list item in yellow</button>
 
-    <dt>How many areas are in the National Park System?</dt>
-    <dd>The system includes 419 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands.</dd>
+<script>
 
-    <dt>What is the largest national park site?</dt>
-    <dd>Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres.</dd>
+// <!----------------Create a button that, when clicked, makes the last li in each ul have a yellow background.-------->
 
-    <dt>What is the National Park Service budget?</dt>
-    <dd>Fiscal Year (FY) 2014 Enacted: $2.98 billion.</dd>
+    document.getElementById("highlightLastLi").addEventListener("click", function () {
+        let ulElements = document.querySelectorAll("ul");
+        for (let ul of ulElements) {
+            ul.lastElementChild.style.backgroundColor = "yellow"
+        }
+    });
+// <!---------------When any h3 is clicked, the lis underneath it should have a fontWeight of "bold". You can get to the corresponding ul by traversing to the h3's sibling and then it's children -->
 
-    <dt>Can I bring my pet to a national park?</dt>
-    <dd>Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities.</dd>
+    let h3Elements = document.querySelectorAll("h3");
+    for (let h3 of h3Elements) {
+        h3.addEventListener("click", (e) => {
+            e.currentTarget.nextElementSibling.style.fontWeight = "bold"; // using some of justin code to simplify
 
-    <dt>How do I apply for a job with the National Park Service?</dt>
-    <dd>National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs.</dd>
+// Traverse to the ul's children (lis) and set fontWeight to "bold"
+            // let liElements = document.querySelectorAll("li"); // my old code
+            // for (let li of liElements) {
+            //     li.style.fontWeight = "bold";
+            //
+            //
+    let lis = document.querySelectorAll('li');
+    for (let li of lis) {
+        li.addEventListener("click", (e) => {
+            e.currentTarget.parentElement.firstElementChild.style.color = "blue" // justins code
+        })
+    }
 
-    <dt>What do I need to know about driving off road in national parks?</dt>
-    <dd>Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
-</dl>
+                // li.addEventListener("click", function () { //old code
+                //     let parentUl = this.parentNode;
+                //     let firstLi = parentUl.firstElementChild;
+                //     firstLi.style.color = "blue";
+                });
+    }
+
+
+
+</script>
+
+
 
 </body>
 </html>
