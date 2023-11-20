@@ -51,14 +51,14 @@
     }
 
     .output .previous-operand {
-        color: rgba(200, 10, 10, 1);
-        font-size: 10px;
-        width: 100%;
+        color: rgba(50, 0, 300, 1);
+        font-size: 30px;
+        height: 40px;
     }
 
     .output .current-operand {
         color: rgba(300, 0, 0, 1);
-        font-size: 10px;
-        width: 100%;
+        font-size: 35px;
+        height: 40px;
     }
 
