@@ -7,6 +7,7 @@
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
+
 <div class="container">
     <header class="text-center my-4">
         <h1>To-Do List</h1>
@@ -32,7 +33,30 @@
         crossorigin="anonymous"></script>
 <script>
 
+    document.querySelector("#to-do-list").addEventListener("click", (e) => {
+        if (e.target.classList.contains("btn-danger")) {
+            const listItem = e.target.parentNode;
+            listItem.remove();
+        }
+    });
+
+    document.querySelector(".add").addEventListener("click", (e) => {
+        e.preventDefault();
+        const listItemText = document.querySelector("#to-do").value;
+
+        if (listItemText !== "") {
+            const createList = document.createElement("li");
+        createList.innerHTML = `<p class="m-0">${listItemText}</p>
+    <button class="btn btn-danger">Done</button>`;
+        createList.classList.add("to-do-item", "list-group-item", "d-flex", "justify-content-between", "align-items-center");
+        document.querySelector("#to-do-list").appendChild(createList);
+        document.querySelector("#to-do").value = "";
+        }
+    });
+
 </script>
 
 </body>
 </html>
+
+
