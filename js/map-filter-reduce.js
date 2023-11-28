@@ -74,5 +74,5 @@ const users = [
     let listOfUserNames = users.reduce(function(person,user)  {
         return `${person} ${user.name}`;
     },"");
-    console.log('Your instructors are:',listOfUserNames)
+    console.log('Your instructors are:',listOfUserNames + ".");
 })();
