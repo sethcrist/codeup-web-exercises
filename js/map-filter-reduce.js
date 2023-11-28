@@ -75,4 +75,19 @@ const users = [
         return `${person} ${user.name}`;
     },"");
     console.log('Your instructors are:',listOfUserNames + ".");
+
+// Bonus: Use .reduce to get the unique list of languages from the list of users.
+    const uniqueLanguages = users.reduce(uniqueLanguage,[])
+
+    function uniqueLanguage (arrOfLang, obj) {
+        for (let computerLang of obj.languages) {
+            if (!arrOfLang.includes(computerLang)) {
+                arrOfLang.push(computerLang)
+            }
+        }
+        return arrOfLang;
+    }
+
+    console.log(uniqueLanguages)
+
 })();
