@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ajax blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></head>
+    <style>
+        body {
+            background: linear-gradient(to right, blue, skyblue);
+        }
+    </style>
+<body>
+    <div class="container mt-3">
+        <h1 class="text-center">Ajax Blog!</h1>
+        <div class="d-flex flex-wrap justify-content-center" id="cardContainer"></div>
+    </div>
+
+
+<script>
+"use strict"
+
+        fetch("data/blog.json")
+            .then(response => response.json())
+            .then(data => {
+                const cardContainer = document.getElementById("cardContainer");
+                data.forEach(post => {
+                    const card = document.createElement("div"); //makes the individual cards for the posts
+                    card.className = "card m-3";
+                    card.style = "18rem";
+
+                    const cardBody = document.createElement("div"); //creates the card body
+                    cardBody.className = "card-body";
+
+                    const cardTitle = document.createElement("h-4"); // creates the title for the card
+                    cardTitle.className = "card-title";
+                    cardTitle.innerText = post.title;
+
+                    const cardContent = document.createElement("p"); // creates the content for the cards
+                    cardContent.className = "card-text";
+                    cardContent.innerText = post.content;
+
+                    const cardDate = document.createElement("p"); // creates the date shown on the card
+                    cardDate.className = "card-text";
+                    cardDate.innerText = `date posted: ${post.date}`
+
+                    const cardCategories = document.createElement("p"); // creates the category shown on the card
+                    cardCategories.className = "card-text";
+                    cardCategories.innerText = `categories: ${post.categories.join(", ")}`;
+
+                    card.appendChild(cardBody); // appends everything
+                    cardBody.appendChild(cardTitle);
+                    cardBody.appendChild(cardContent);
+                    cardBody.appendChild(cardDate);
+                    cardBody.appendChild(cardCategories);
+                    cardContainer.appendChild(card);
+
+                });
+            })
+            .catch(error => console.error("error fetching blog", error));
+
+
+
+
+
+
+
+
+</script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</html>
