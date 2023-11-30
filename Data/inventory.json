@@ -1,0 +1,56 @@
+[
+    {
+        "image": "img/img/hammer.png",
+        "title": "Hammer",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 20
+    }, {
+        "image": "img/img/drill.png",
+        "title": "Drill",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            " powered"
+        ],
+        "price": 100
+    }, {
+        "image": "img/img/mower.png",
+        "title": "Mower",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            " gas",
+            " outdoor"
+        ],
+        "price": 200
+    }, {
+        "image": "img/img/screwdriver.jpeg",
+        "title": "Screwdrivers",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 10
+    }, {
+        "image": "img/img/sockets.png",
+        "title": "Sockets",
+        "quantity": 7,
+        "categories": [
+            "tool"
+        ],
+        "price": 25
+    }, {
+        "image": "img/img/wacker.png",
+        "title": "Weedwacker",
+        "quantity": 3,
+        "categories": [
+            "tool",
+            " gass",
+            " outdoor"
+        ],
+        "price": 100
+    }
+]
