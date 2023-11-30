@@ -46,35 +46,3 @@ function reverseGeocode(coordinates, token) {
 }
 
 
-// geocode("3211 Grand Pkwy Suite 100, Katy, TX 77449", MB_KEY).then(coords => { //creates a marker set at that location
-//     const losPerez = new mapboxgl.Marker()
-//         .setLngLat(coords)
-//         .addTo(map);
-//
-//     const losPerezPopUp = new mapboxgl.Popup()
-//         .setHTML("<p>This is my first favorite restaurant, Los Perez!</p>"); //creates a popup when clicked on the set location
-//
-//     losPerez.setPopup(losPerezPopUp);
-// });
-
-// geocode("19111 Katy Fwy #100, Houston, TX 77094", MB_KEY).then(coords => { //creates a marker set at that location
-//     const torchyTacos = new mapboxgl.Marker()
-//         .setLngLat(coords)
-//         .addTo(map);
-//
-//     const torchyTacosPopUp = new mapboxgl.Popup()
-//         .setHTML("<p>This is my second favorite restaurant, Torchy's Tacos!</p>"); //creates a popup when clicked on the set location
-//
-//     torchyTacos.setPopup(torchyTacosPopUp);
-// });
-//
-// geocode("98 W Grand Pkwy S #100, Katy, TX 77494", MB_KEY).then(coords => { //creates a marker set at that location
-//     const toastedYolk = new mapboxgl.Marker()
-//         .setLngLat(coords)
-//         .addTo(map);
-//
-//     const toastedYolkPopup = new mapboxgl.Popup()
-//         .setHTML("<p>This is my favorite breakfast restaurant, Toasted Yolk!</p>"); //creates a popup when clicked on the set location
-//
-//     toastedYolk.setPopup(toastedYolkPopup);
-// });
