@@ -1,91 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mapbox!!</title>
-  <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet' />
+    <meta charset="UTF-8">
+    <title>Mapbox!!</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="css/mapbox.css">
 </head>
 <body>
-    <div id='map' style='width: 80vw; height: 50vh; margin: auto'></div>
-    <script src="js/keys.js"></script>
-    <script src="js/mapbox-geocoder-utils.js"></script>
+<header>
+    <h1>My Mapbox Exercise</h1>
+    <hr>
+</header>
+<div id='map' style='width: 80vw; height: 50vh; margin: auto; border-radius: 15px; '></div>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 
-    <script>
-        mapboxgl.accessToken = MB_KEY;
-        const map = new mapboxgl.Map({
-            container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/streets-v12', // style URL
-            center: [-95.7309312, 29.8173647], // starting position [lng, lat]
-            zoom: 8, // starting zoom
+
+<script>
+    mapboxgl.accessToken = MB_KEY;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v12', // style URL
+        center: [-95.7309312, 29.8173647], // starting position [lng, lat]
+        zoom: 8, // starting zoom
+    });
+
+    map.addControl(new mapboxgl.NavigationControl()); // adds a zoom controller
+
+    const favoriteRestaurant = [
+        {
+            name: "los Perez",
+            location: "3211 Grand Pkwy Suite 100, Katy, TX 77449",
+            popupContent: "This is my first favorite restaurant, Los Perez!"
+        },
+        {
+            name: "Torchy's Tacos",
+            location: "19111 Katy Fwy #100, Houston, TX 77094",
+            popupContent: "This is my second favorite restaurant, Torchy's Tacos!"
+        },
+        {
+            name: "Toasted Yolk",
+            location: "98 W Grand Pkwy S #100, Katy, TX 77494",
+            popupContent: "This is my favorite breakfast restaurant, Toasted Yolk!"
+        }
+    ];
+
+    favoriteRestaurant.forEach(restaurant => {
+        geocode(restaurant.location, MB_KEY).then(coords => {
+            const marker = new mapboxgl.Marker()
+                .setLngLat(coords)
+                .addTo(map);
+
+            const popUp = new mapboxgl.Popup()
+                .setHTML(`<p>${restaurant.popupContent} <br> located at: ${restaurant.location}</p>`);
+
+            marker.setPopup(popUp);
         });
+    });
 
-        map.addControl(new mapboxgl.NavigationControl()); // adds a zoom controller
+    // geocode("3211 Grand Pkwy Suite 100, Katy, TX 77449", MB_KEY).then(coords => { //creates a marker set at that location
+    //     const losPerez = new mapboxgl.Marker()
+    //         .setLngLat(coords)
+    //         .addTo(map);
+    //
+    //     const losPerezPopUp = new mapboxgl.Popup()
+    //         .setHTML("<p>This is my first favorite restaurant, Los Perez!</p>"); //creates a popup when clicked on the set location
+    //
+    //     losPerez.setPopup(losPerezPopUp);
+    // });
 
-        const favoriteRestaurant = [
-            {
-                name: "los Perez",
-                location: "3211 Grand Pkwy Suite 100, Katy, TX 77449",
-                popupContent: "This is my first favorite restaurant, Los Perez!"
-            },
-            {
-                name: "Torchy's Tacos",
-                location: "19111 Katy Fwy #100, Houston, TX 77094",
-                popupContent: "This is my second favorite restaurant, Torchy's Tacos!"
-            },
-            {
-                name: "Toasted Yolk",
-                location: "98 W Grand Pkwy S #100, Katy, TX 77494",
-                popupContent: "This is my favorite breakfast restaurant, Toasted Yolk!"
-            }
-        ];
-
-        favoriteRestaurant.forEach(restaurant => {
-            geocode(restaurant.location, MB_KEY).then(coords => {
-                const marker = new mapboxgl.Marker()
-                    .setLngLat(coords)
-                    .addTo(map);
-
-                const popUp = new mapboxgl.Popup()
-                    .setHTML(`<p>${restaurant.popupContent}</p>`);
-
-                marker.setPopup(popUp);
-            });
-        });
-
-        // geocode("3211 Grand Pkwy Suite 100, Katy, TX 77449", MB_KEY).then(coords => { //creates a marker set at that location
-        //     const losPerez = new mapboxgl.Marker()
-        //         .setLngLat(coords)
-        //         .addTo(map);
-        //
-        //     const losPerezPopUp = new mapboxgl.Popup()
-        //         .setHTML("<p>This is my first favorite restaurant, Los Perez!</p>"); //creates a popup when clicked on the set location
-        //
-        //     losPerez.setPopup(losPerezPopUp);
-        // });
-
-        // geocode("19111 Katy Fwy #100, Houston, TX 77094", MB_KEY).then(coords => { //creates a marker set at that location
-        //     const torchyTacos = new mapboxgl.Marker()
-        //         .setLngLat(coords)
-        //         .addTo(map);
-        //
-        //     const torchyTacosPopUp = new mapboxgl.Popup()
-        //         .setHTML("<p>This is my second favorite restaurant, Torchy's Tacos!</p>"); //creates a popup when clicked on the set location
-        //
-        //     torchyTacos.setPopup(torchyTacosPopUp);
-        // });
-        //
-        // geocode("98 W Grand Pkwy S #100, Katy, TX 77494", MB_KEY).then(coords => { //creates a marker set at that location
-        //     const toastedYolk = new mapboxgl.Marker()
-        //         .setLngLat(coords)
-        //         .addTo(map);
-        //
-        //     const toastedYolkPopup = new mapboxgl.Popup()
-        //         .setHTML("<p>This is my favorite breakfast restaurant, Toasted Yolk!</p>"); //creates a popup when clicked on the set location
-        //
-        //     toastedYolk.setPopup(toastedYolkPopup);
-        // });
-    </script>
+    // geocode("19111 Katy Fwy #100, Houston, TX 77094", MB_KEY).then(coords => { //creates a marker set at that location
+    //     const torchyTacos = new mapboxgl.Marker()
+    //         .setLngLat(coords)
+    //         .addTo(map);
+    //
+    //     const torchyTacosPopUp = new mapboxgl.Popup()
+    //         .setHTML("<p>This is my second favorite restaurant, Torchy's Tacos!</p>"); //creates a popup when clicked on the set location
+    //
+    //     torchyTacos.setPopup(torchyTacosPopUp);
+    // });
+    //
+    // geocode("98 W Grand Pkwy S #100, Katy, TX 77494", MB_KEY).then(coords => { //creates a marker set at that location
+    //     const toastedYolk = new mapboxgl.Marker()
+    //         .setLngLat(coords)
+    //         .addTo(map);
+    //
+    //     const toastedYolkPopup = new mapboxgl.Popup()
+    //         .setHTML("<p>This is my favorite breakfast restaurant, Toasted Yolk!</p>"); //creates a popup when clicked on the set location
+    //
+    //     toastedYolk.setPopup(toastedYolkPopup);
+    // });
+</script>
 
 </body>
 </html>

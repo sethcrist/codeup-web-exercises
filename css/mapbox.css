@@ -1,0 +1,18 @@
+body {
+    background: linear-gradient(to right, purple, blue);
+}
+
+h1 {
+    font-family: cursive;
+    font-size: 5em;
+    text-align: center;
+    background: -webkit-linear-gradient(rgb(255, 221, 0), rgb(128, 0, 128));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2px;
+}
+
+hr {
+    border: 2px solid darkred;
+    margin-bottom: 15px;
+}
