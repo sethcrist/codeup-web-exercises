@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather Map</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet'/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="js/weather_map.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"> <!--link you use bootstrap icons-->
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
+<script src="js/keys.js"></script>
+<div id='map'></div>
+
     <header>
         <div class="d-flex align-items-center">
             <video autoplay muted loop id="myVideo">
@@ -22,15 +27,75 @@
     </header>
 
 
-<script>
 
-</script>
+
+    <div class="card" style="width: 18rem;"> <!--first day-->
+        <div class="card-header">
+            Date:
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="bi bi-thermometer-high"></i>temp: high - low</li>
+            <li class="list-group-item"><i class="bi bi-cloud-sun"></i>description</li>
+            <li class="list-group-item"><i class="bi bi-moisture"></i>humidity</li>
+            <li class="list-group-item"><i class="bi bi-wind"></i>wind</li>
+        </ul>
+    </div>
+
+
+    <div class="card cardsTwoToFive" style="width: 18rem;"> <!--second day-->
+        <div class="card-header">
+            Date:
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="bi bi-thermometer-high"></i>temp: high - low</li>
+            <li class="list-group-item"><i class="bi bi-cloud-sun"></i>description</li>
+            <li class="list-group-item"><i class="bi bi-moisture"></i>humidity</li>
+            <li class="list-group-item"><i class="bi bi-wind"></i>wind</li>
+        </ul>
+    </div>
+
+    <div class="card cardsTwoToFive" style="width: 18rem;"> <!--third day-->
+        <div class="card-header">
+            Date:
+     </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="bi bi-thermometer-high"></i>temp: high - low</li>
+            <li class="list-group-item"><i class="bi bi-cloud-sun"></i>description</li>
+            <li class="list-group-item"><i class="bi bi-moisture"></i>humidity</li>
+            <li class="list-group-item"><i class="bi bi-wind"></i>wind</li>
+        </ul>
+    </div>
+
+    <div class="card cardsTwoToFive" style="width: 18rem;"> <!--fourth day-->
+        <div class="card-header">
+            Date:
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="bi bi-thermometer-high"></i>temp: high - low</li>
+            <li class="list-group-item"><i class="bi bi-cloud-sun"></i>description</li>
+            <li class="list-group-item"><i class="bi bi-moisture"></i>humidity</li>
+            <li class="list-group-item"><i class="bi bi-wind"></i>wind</li>
+        </ul>
+    </div>
+
+    <div class="card cardsTwoToFive" style="width: 18rem;"> <!--fifth day-->
+        <div class="card-header">
+            Date:
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="bi bi-thermometer-high"></i>temp: high - low</li>
+            <li class="list-group-item"><i class="bi bi-cloud-sun"></i>description</li>
+            <li class="list-group-item"><i class="bi bi-moisture"></i>humidity</li>
+            <li class="list-group-item"><i class="bi bi-wind"></i>wind</li>
+        </ul>
+    </div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 <script src="js/weather_map.js"></script>
-
+<script src="https://kit.fontawesome.com/3f73c8b14d.js" crossorigin="anonymous"></script>
 </body>
 </html>
