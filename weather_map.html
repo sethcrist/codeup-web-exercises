@@ -13,82 +13,100 @@
 </head>
 <body>
 <script src="js/keys.js"></script>
-<div id='map'></div>
 
-    <header>
-        <div class="d-flex align-items-center">
-            <video autoplay muted loop id="myVideo">
-                <source src="cover/stormy-weather.mp4" type="video/mp4">
-            </video>
-            <div class="p-4">
+<header>
+    <div class="d-flex align-items-center">
+        <video autoplay muted loop id="myVideo">
+            <source src="cover/stormy-weather.mp4" type="video/mp4">
+        </video>
+        <div class="p-4">
             <h1 class="d-inline">Weather Map</h1>
-            </div>
         </div>
-    </header>
+    </div>
+</header>
+
+<div class="map-container">
+    <div id='map'></div>
+
+    <nav id="navbar" class="navbar bg-clear">
+        <div class="container-fluid">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search Your Area" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
 
 
 
 
-    <div class="card" style="width: 18rem;"> <!--first day-->
-        <div class="card-header">
+
+
+
+    <div class="card" style="width: 15rem;"> <!--first day-->
+        <div class="card-header" id="date1">
             Date:
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><i class="bi bi-thermometer-high"></i>temp: high - low</li>
-            <li class="list-group-item"><i class="bi bi-cloud-sun"></i>description</li>
-            <li class="list-group-item"><i class="bi bi-moisture"></i>humidity</li>
-            <li class="list-group-item"><i class="bi bi-wind"></i>wind</li>
+            <li class="list-group-item"><i class="bi bi-thermometer-high" id="temp1"></i></li>
+            <li class="list-group-item"><i class="bi bi-cloud-sun" id="description1"></i></li>
+            <li class="list-group-item"><i class="bi bi-moisture" id="humidity1"></i></li>
+            <li class="list-group-item"><i class="bi bi-wind" id="wind1"></i></li>
         </ul>
     </div>
 
 
-    <div class="card cardsTwoToFive" style="width: 18rem;"> <!--second day-->
-        <div class="card-header">
+    <div class="card cardsTwoToFive" style="width: 15rem;"> <!--second day-->
+        <div class="card-header" id="date2">
             Date:
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><i class="bi bi-thermometer-high"></i>temp: high - low</li>
-            <li class="list-group-item"><i class="bi bi-cloud-sun"></i>description</li>
-            <li class="list-group-item"><i class="bi bi-moisture"></i>humidity</li>
-            <li class="list-group-item"><i class="bi bi-wind"></i>wind</li>
+            <li class="list-group-item"><i class="bi bi-thermometer-high" id="temp2"></i></li>
+            <li class="list-group-item"><i class="bi bi-cloud-sun"  id="description2"></i></li>
+            <li class="list-group-item"><i class="bi bi-moisture" id="humidity2"></i></li>
+            <li class="list-group-item"><i class="bi bi-wind" id="wind2"></i></li>
         </ul>
     </div>
 
-    <div class="card cardsTwoToFive" style="width: 18rem;"> <!--third day-->
-        <div class="card-header">
+    <div class="card cardsTwoToFive" style="width: 15rem;"> <!--third day-->
+        <div class="card-header" id="date3">
             Date:
      </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><i class="bi bi-thermometer-high"></i>temp: high - low</li>
-            <li class="list-group-item"><i class="bi bi-cloud-sun"></i>description</li>
-            <li class="list-group-item"><i class="bi bi-moisture"></i>humidity</li>
-            <li class="list-group-item"><i class="bi bi-wind"></i>wind</li>
+            <li class="list-group-item"><i class="bi bi-thermometer-high" id="temp3"></i></li>
+            <li class="list-group-item"><i class="bi bi-cloud-sun" id="description3"></i></li>
+            <li class="list-group-item"><i class="bi bi-moisture" id="humidity3"></i></li>
+            <li class="list-group-item"><i class="bi bi-wind" id="wind3"></i></li>
         </ul>
     </div>
 
-    <div class="card cardsTwoToFive" style="width: 18rem;"> <!--fourth day-->
-        <div class="card-header">
+    <div class="card cardsTwoToFive" style="width: 15rem;"> <!--fourth day-->
+        <div class="card-header" id="date4">
             Date:
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><i class="bi bi-thermometer-high"></i>temp: high - low</li>
-            <li class="list-group-item"><i class="bi bi-cloud-sun"></i>description</li>
-            <li class="list-group-item"><i class="bi bi-moisture"></i>humidity</li>
-            <li class="list-group-item"><i class="bi bi-wind"></i>wind</li>
+            <li class="list-group-item"><i class="bi bi-thermometer-high" id="temp4"></i></li>
+            <li class="list-group-item"><i class="bi bi-cloud-sun" id="description4"></i></li>
+            <li class="list-group-item"><i class="bi bi-moisture" id="humidity4"></i></li>
+            <li class="list-group-item"><i class="bi bi-wind" id="wind4"></i></li>
         </ul>
     </div>
 
-    <div class="card cardsTwoToFive" style="width: 18rem;"> <!--fifth day-->
-        <div class="card-header">
+    <div class="card cardsTwoToFive" style="width: 15rem;"> <!--fifth day-->
+        <div class="card-header" id="date5">
             Date:
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><i class="bi bi-thermometer-high"></i>temp: high - low</li>
-            <li class="list-group-item"><i class="bi bi-cloud-sun"></i>description</li>
-            <li class="list-group-item"><i class="bi bi-moisture"></i>humidity</li>
-            <li class="list-group-item"><i class="bi bi-wind"></i>wind</li>
+            <li class="list-group-item"><i class="bi bi-thermometer-high" id="temp5"></i></li>
+            <li class="list-group-item"><i class="bi bi-cloud-sun" id="description5"></i></li>
+            <li class="list-group-item"><i class="bi bi-moisture" id="humidity5"></i></li>
+            <li class="list-group-item"><i class="bi bi-wind" id="wind5"></i></li>
         </ul>
     </div>
+
+
+
 
 
 
