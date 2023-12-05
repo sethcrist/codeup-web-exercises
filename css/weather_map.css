@@ -2,7 +2,7 @@
 
 body {
     background: linear-gradient(to right, lightskyblue, orange, red);
-    height: 200vh;
+    height: 150vh;
     margin: 0;
 }
 
@@ -13,6 +13,8 @@ h1 {
     left: 40%;
     font-size: 5em;
 }
+
+
 
 #myVideo {
     position: absolute;
