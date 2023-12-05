@@ -1,9 +1,7 @@
-// export default
-// add a parameter for maximum
 
-    function randomNumber(max) {
-    return Math.floor(Math.random() * max);
+
+    export function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
-    console.log(randomNumber())
 
-    export default randomNumber;
+    // export default randomNumber; //use this if you don't use "export function..."

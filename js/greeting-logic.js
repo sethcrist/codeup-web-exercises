@@ -1,7 +1,7 @@
 //put the following array of greetings and create a function that returns a random greeting.
     //Make sure to export what you need from this file and import the random number function from numberUtils.
 
-import randomNumber from "./number-utils.js";
+import { randomNumber } from "./number-utils.js"; //exported from number-utils.js
 
 const greetings =
     [
@@ -27,10 +27,9 @@ const greetings =
         "Pleased to meet you"
     ];
 
-function randomGreeting() {
-        const random = randomNumber(greetings.length);
-        return greetings[random];
+export function randomGreeting() {
+        const randomIndex = randomNumber(0, greetings.length - 1);
+        return greetings[randomIndex];
 }
-console.log(random)
 
-export default randomGreeting();
+//export default randomGreeting(); // use this if you don't use "export function..."

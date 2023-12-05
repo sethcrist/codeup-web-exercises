@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Greetings</title>
-    <script src="js/number-utils.js"></script>
+    <style>
+        body {
+            background: #0fb784;
+        }
+    </style>
 </head>
 <body>
+    <form id="greetingForm">
+        <label for="userName">Whats Your Name?</label>
+        <input type="text" id="userName" name="userName">
+        <button type="submit">Get a custom greeting!</button>
+    </form>
+
+<h1 id="greetingReturn"></h1>
+
+    <script type="module" src="js/greeting-control.js"></script>
 
 </body>
 </html>
