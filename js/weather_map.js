@@ -5,7 +5,7 @@ const map = new mapboxgl.Map({ //registers the map
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v12', // style URL
     center: [-95.405664, 29.757964], // starting position [lng, lat], houston
-    zoom: 15, // starting zoom
+    zoom: 6, // starting zoom
 });
 
 map.addControl(new mapboxgl.NavigationControl()); // adds a zoom controller
@@ -49,7 +49,7 @@ function updateWeather(lngLat) {
     map.flyTo({ //when a new marker is place the map will move to the new marker
         center: [lngLat.lng, lngLat.lat],
         essential: true,
-        zoom: 10,
+        zoom: 6,
         speed: 1.5
     })
     fetch(`https://api.openweathermap.org/data/2.5/forecast?lon=${lngLat.lng}&lat=${lngLat.lat}&appid=${WM_KEY}`)
@@ -86,7 +86,7 @@ function updateWeather(lngLat) {
 
 }
 
-async function geocodeCity (cityName) {
+async function geocodeCity (cityName) { // convert a city name into coordinates.
     const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${cityName}.json?access_token=${MB_KEY}`);
     const data = await response.json();
     const coordinates = data.features[0].geometry.coordinates;
