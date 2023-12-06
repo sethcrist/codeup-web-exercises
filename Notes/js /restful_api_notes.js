@@ -48,7 +48,7 @@
             console.error(error);
         }
     }
-    getBookAndAuthor(2)
+    getBookAndAuthor(1)
         .then(book => console.log(book))
         .catch(error => console.error(error));
 
