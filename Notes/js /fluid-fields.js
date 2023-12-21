@@ -15,9 +15,9 @@ class Particle {
         this.y = Math.floor(Math.random() * this.effect.height);
         this.speedX;
         this.speedY;
-        this.speedModifier = Math.floor(Math.random() * 5 + 1);
+        this.speedModifier = Math.floor(Math.random() * 2 + 1);
         this.history = [{x: this.x, y: this.y}];
-        this.maxLength = Math.floor(Math.random() * 200 + 20);
+        this.maxLength = Math.floor(Math.random() * 60 + 20);
         this.angle = 0;
         this.newAngle = 0;
         this.angleCorrector = Math.random() * 0.5 + 0.1;
@@ -73,9 +73,9 @@ class Particle {
         let attempts = 0;
         let resetSuccess = false;
 
-        while (attempts < 10 && !resetSuccess) {
+        while (attempts < 50 && !resetSuccess) {
             attempts++;
-            let testIndex = Math.floor(Math.random(this.effect.flowField.length));
+            let testIndex = Math.floor(Math.random() * this.effect.flowField.length);
             if (this.effect.flowField[testIndex].alpha > 0) {
                 this.x = this.effect.flowField[testIndex].x;
                 this.y = this.effect.flowField[testIndex].y;
@@ -143,8 +143,8 @@ class Effect {
         gradient3.addColorStop(0.4, 'rgb(110, 25, 0)');
         gradient3.addColorStop(0.8, 'rgb(0, 0, 255)');
 
-        this.context.fillStyle = gradient2;
-        this.context.fillText('Seth', this.width * 0.5, this.height * 0.5, this.width * 0.8);
+        this.context.fillStyle = gradient3;
+        this.context.fillText('SETH', this.width * 0.5, this.height * 0.5, this.width * 0.8);
     }
     init() {
         //create flow field
