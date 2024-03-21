@@ -5,21 +5,21 @@ const ctx = canvas.getContext("2d") //video used 2D
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let gradient = ctx.createRadialGradient(canvas.width/2, canvas.height/2, 100, canvas.width/2, canvas.height/2, 400); // to make a circle
-// let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height); // to make it linear
-gradient.addColorStop(0.1, 'red');
-gradient.addColorStop(0.2, 'purple');
-gradient.addColorStop(0.3, 'red');
-gradient.addColorStop(0.4, 'purple');
+// let gradient = ctx.createRadialGradient(canvas.width/2, canvas.height/2, 100, canvas.width/2, canvas.height/2, 400); // to make a circle
+let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height); // to make it linear
 gradient.addColorStop(0.5, 'red');
-gradient.addColorStop(0.6, 'purple');
+// gradient.addColorStop(0.5, 'purple');
+// gradient.addColorStop(0.3, 'red');
+// gradient.addColorStop(0.4, 'purple');
+// gradient.addColorStop(0.5, 'red');
+// gradient.addColorStop(0.6, 'purple');
 // gradient.addColorStop(0.7, 'red');
-gradient.addColorStop(0.8, 'purple');
-gradient.addColorStop(0.9, 'darkred');
+// gradient.addColorStop(0.8, 'purple');
+// gradient.addColorStop(0.9, 'darkred');
 
 class symbolObject {
     constructor (x, y, fontSize, canvasHeight) {
-        this.characters = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        this.characters = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ 😑"
         this.x = x;
         this.y = y;
         this.fontSize = fontSize;
